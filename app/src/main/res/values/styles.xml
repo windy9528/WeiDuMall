@@ -1,0 +1,50 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>  <!--删除图文混排标题-->
+    </style>
+
+    <!--登录页面-->
+    <!--一、登录页面的输入框-->
+    <style name="login_edittext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/dp_25</item>
+        <item name="android:layout_marginRight">@dimen/dp_25</item>
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="android:textSize">@dimen/sp_18</item>
+    </style>
+
+    <!--二、登录页面的子相对布局-->
+    <style name="login_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dp_35</item>
+        <item name="android:layout_marginRight">@dimen/dp_35</item>
+    </style>
+
+    <!--三、登录页面的横线-->
+    <style name="login_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_2</item>
+        <item name="android:layout_marginLeft">@dimen/dp_35</item>
+        <item name="android:layout_marginRight">@dimen/dp_35</item>
+        <item name="android:layout_marginTop">@dimen/dp_10</item>
+        <item name="android:background">@color/colorWhite</item>
+    </style>
+
+    <!--四、记住密码-->
+    <style name="MyCheckBox" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlNormal" tools:targetApi="lollipop">@color/colorWhite</item>
+        <item name="android:colorControlActivated" tools:targetApi="lollipop">@color/colorWhite
+        </item>
+    </style>
+</resources>
