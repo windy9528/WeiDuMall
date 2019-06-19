@@ -15,12 +15,14 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.OnClick;
 import bwie.com.weidumall.R;
+import bwie.com.weidumall.common.App;
 import bwie.com.weidumall.common.BaseActivity;
 import bwie.com.weidumall.constract.ImplView;
 import bwie.com.weidumall.entity.Result;
 import bwie.com.weidumall.entity.user.UserInfo;
 import bwie.com.weidumall.presenter.user.LoginPresenter;
 import bwie.com.weidumall.util.SPUtil;
+import bwie.com.weidumall.view.MainActivity;
 
 public class LoginActivity extends BaseActivity implements ImplView<UserInfo> {
 
@@ -94,7 +96,7 @@ public class LoginActivity extends BaseActivity implements ImplView<UserInfo> {
      */
     @Override
     protected void initData() {
-        loginSp = getSharedPreferences("loginStatus", MODE_PRIVATE);
+        loginSp = App.getLoginStatus();
         //显示用户此前录入的数据
         boolean flag = loginSp.getBoolean("flag", false);
         //回显复选框状态
@@ -119,6 +121,7 @@ public class LoginActivity extends BaseActivity implements ImplView<UserInfo> {
         UserInfo userInfo = (UserInfo) data.getResult();
         SPUtil.saveLoginStatus(this, phone, password, rememberPwd, true);
         SPUtil.saveUserInfo(this, userInfo.getUserId(), userInfo.getSessionId());
+        intent(MainActivity.class);
         showToast("登录成功");
     }
 

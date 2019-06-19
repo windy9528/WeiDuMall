@@ -3,15 +3,13 @@ package bwie.com.weidumall.view.activity.user;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
-import android.util.Log;
 import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 import bwie.com.weidumall.R;
-import bwie.com.weidumall.common.Api;
+import bwie.com.weidumall.common.App;
 import bwie.com.weidumall.common.BaseActivity;
-import bwie.com.weidumall.entity.user.UserInfo;
 import bwie.com.weidumall.view.MainActivity;
 
 public class WelcomeActivity extends BaseActivity {
@@ -27,9 +25,7 @@ public class WelcomeActivity extends BaseActivity {
             count--;
             seekText.setText("跳过" + count + "s");
             if (count == 0) {
-                SharedPreferences sp = getSharedPreferences("loginStatus", MODE_PRIVATE);
-                boolean status = sp.getBoolean("loginStatus", false);
-                if (status) {
+                if (App.getLoginStatus().getBoolean("loginStatus", false)) {
                     intent(MainActivity.class);//跳转到主页面
                 } else {
                     intent(LoginActivity.class);//跳转到登录页

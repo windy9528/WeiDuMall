@@ -6,6 +6,7 @@ import android.net.NetworkInfo;
 
 import java.util.concurrent.TimeUnit;
 
+import bwie.com.weidumall.common.App;
 import bwie.com.weidumall.common.Constant;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;

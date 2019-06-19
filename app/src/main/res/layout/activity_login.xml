@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@mipmap/login_background" />
+        android:src="@drawable/login_background" />
 
     <RelativeLayout
         android:id="@+id/phone_layout"
@@ -23,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
-            android:src="@mipmap/login_icon_phone_n" />
+            android:src="@drawable/login_icon_phone_n" />
 
         <EditText
             android:id="@+id/login_phone"
@@ -43,14 +43,14 @@
         android:id="@+id/pwd_layout"
         style="@style/login_layout"
         android:layout_below="@+id/phone_line"
-        android:layout_marginTop="@dimen/dp_25">
+        android:layout_marginTop="@dimen/dp_30">
 
         <ImageView
             android:id="@+id/pwd_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_10"
-            android:src="@mipmap/login_icon_lock_n" />
+            android:src="@drawable/login_icon_lock_n" />
 
         <EditText
             android:id="@+id/login_pwd"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@mipmap/login_icon_eye_n" />
+            android:src="@drawable/login_icon_eye_n" />
 
     </RelativeLayout>
 
@@ -80,7 +80,6 @@
 
         <CheckBox
             android:id="@+id/remember_pwd"
-            android:theme="@style/MyCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:buttonTint="@color/colorWhite"
@@ -111,6 +110,6 @@
         android:background="@drawable/button_login"
         android:text="登录"
         android:textColor="#FF6072"
-        android:textSize="@dimen/sp_16" />
+        android:textSize="@dimen/sp_18" />
 
 </RelativeLayout>

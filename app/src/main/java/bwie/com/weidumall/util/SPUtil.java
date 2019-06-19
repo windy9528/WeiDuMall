@@ -59,7 +59,7 @@ public class SPUtil {
         //提交
         editor.commit();
     }
-
+/*
     public static int getInt(Context context, String key) {
         SharedPreferences userInfo = context
                 .getSharedPreferences("userInfo", Context.MODE_PRIVATE);
@@ -73,9 +73,18 @@ public class SPUtil {
         SharedPreferences userInfo = context
                 .getSharedPreferences("userInfo", Context.MODE_PRIVATE);
 
-        String string = userInfo.getString(key, null);
+        String string = userInfo.getString(key, "");
 
         return string;
     }
+
+    public static String getSP(Context context, String key) {
+        SharedPreferences userInfo = context
+                .getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+
+        String string = userInfo.getString(key, null);
+
+        return string;
+    }*/
 }
 

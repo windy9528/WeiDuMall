@@ -1,5 +1,7 @@
 package bwie.com.weidumall.common;
 
+import com.blankj.utilcode.util.EncryptUtils;
+
 /**
  * date:2019/6/18
  * name:windy
@@ -9,7 +11,6 @@ package bwie.com.weidumall.common;
 public class Constant {
 
     public static boolean isRelease = false; //测试环境&正式环境
-
 
     //测试版url
     public static final String TEST_URL = "http://172.17.8.100/small/";

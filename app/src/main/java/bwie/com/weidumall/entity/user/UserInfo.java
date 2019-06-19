@@ -17,7 +17,6 @@ public class UserInfo {
     private String phone;
     private String sessionId;
     private int sex; //默认1返回男
-    public int loginStatus = 0;  //1代表登录过  0代表没登录或者退出状态
 
     public int getUserId() {
         return userId;
