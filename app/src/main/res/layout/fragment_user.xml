@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/user_background"
+        android:scaleType="centerCrop" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_140"
+        android:background="@drawable/background_user"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_17"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_60"
+            android:text="用户昵称"
+            android:textColor="#666666"
+            android:textSize="@dimen/sp_14" />
+
+        <LinearLayout
+            style="@style/personal_ll"
+            android:layout_marginTop="@dimen/dp_65">
+
+            <ImageView
+                style="@style/personal_img"
+                android:src="@drawable/my_icon_information_n" />
+
+            <LinearLayout style="@style/personal_lltwo">
+
+                <TextView
+                    android:id="@+id/p_zl"
+                    style="@style/personal_tv"
+                    android:text="个人资料" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#ededed" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/personal_ll"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <ImageView
+                style="@style/personal_img"
+                android:src="@drawable/my_icon_circle_n" />
+
+            <LinearLayout style="@style/personal_lltwo">
+
+                <TextView
+                    android:id="@+id/p_qz"
+                    style="@style/personal_tv"
+                    android:text="我的圈子" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#ededed" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/personal_ll"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <ImageView
+                style="@style/personal_img"
+                android:layout_marginLeft="@dimen/dp_4"
+                android:src="@drawable/my_icon_foot_n" />
+
+            <LinearLayout style="@style/personal_lltwo">
+
+                <TextView
+                    android:id="@+id/p_zj"
+                    style="@style/personal_tv"
+                    android:text="我的足迹" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#ededed" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/personal_ll"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <ImageView
+                style="@style/personal_img"
+                android:src="@drawable/my_icon_wallet_n" />
+
+            <LinearLayout style="@style/personal_lltwo">
+
+                <TextView
+                    android:id="@+id/p_qb"
+                    style="@style/personal_tv"
+                    android:text="我的钱包" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#ededed" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/personal_ll"
+            android:layout_marginTop="@dimen/dp_20">
+
+            <ImageView
+                style="@style/personal_img"
+                android:src="@drawable/my_icon_address_n" />
+
+            <LinearLayout style="@style/personal_lltwo">
+
+                <TextView
+                    android:id="@+id/p_dz"
+                    style="@style/personal_tv"
+                    android:text="我的收货地址" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="#ededed" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/user_icon"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dp_100"
+        app:placeholderImage="@drawable/user_background"
+        app:roundAsCircle="true" />
+
+</RelativeLayout>

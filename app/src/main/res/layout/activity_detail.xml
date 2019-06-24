@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/detail_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_25"
+                android:layout_marginTop="@dimen/dp_35">
+
+                <ImageView
+                    android:id="@+id/detail_back"
+                    android:layout_width="@dimen/dp_12"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_30"
+                    android:src="@drawable/common_nav_btn_back_n" />
+
+                <RadioGroup
+                    android:id="@+id/detail_radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_75"
+                    android:layout_marginRight="@dimen/dp_75"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/sp"
+                        style="@style/detail_rb"
+                        android:text="商品"
+                        android:textFontWeight="1" />
+
+                    <RadioButton
+                        android:id="@+id/xq"
+                        style="@style/detail_rb"
+                        android:text="详情"
+                        android:textFontWeight="1" />
+
+                    <RadioButton
+                        android:id="@+id/pl"
+                        style="@style/detail_rb"
+                        android:text="评论"
+                        android:textFontWeight="1" />
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <com.stx.xhb.xbanner.XBanner
+                android:id="@+id/detailbanner"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_289"
+                android:layout_below="@id/detail_title"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginRight="@dimen/dp_20"
+                app:AutoPlayTime="2000"
+                app:isAutoPlay="true"
+                app:isShowNumberIndicator="true"
+                app:placeholderDrawable="@drawable/wait"
+                app:pointsContainerBackground="#44aaaaaa"
+                app:pointsPosition="RIGHT"
+                app:tipTextSize="@dimen/sp_13"></com.stx.xhb.xbanner.XBanner>
+
+            <RelativeLayout
+                android:id="@+id/detail_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detailbanner"
+                android:layout_marginTop="@dimen/dp_5">
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="价格"
+                    android:textColor="#ff0000"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:gravity="center"
+                    android:text="已售出1112件"
+                    android:textSize="10sp" />
+
+                <!--<ImageView
+                    android:id="@+id/addShopCar"
+                    android:layout_width="@dimen/dp_50"
+                    android:layout_height="@dimen/dp_50"
+                    android:layout_gravity="right"
+                    android:src="@mipmap/common_btn_add_n"
+                  />-->
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/detail_price"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_20"
+                android:text="商品详情"
+                android:textColor="#666666"
+                android:textSize="@dimen/sp_13" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_16"
+                android:text="商品详情 "
+                android:textColor="#666666"
+                android:textSize="@dimen/sp_14" />
+
+            <View
+                android:id="@+id/text_line"
+                android:layout_width="@dimen/dp_28"
+                android:layout_height="@dimen/dp_2"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_3"
+                android:background="#de233f" />
+
+            <WebView
+                android:background="#DD00"
+                android:id="@+id/webview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_line"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_20"></WebView>
+
+
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/addShopCar"
+        android:layout_width="@dimen/dp_27"
+        android:layout_height="@dimen/dp_25"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_6"
+        android:layout_marginBottom="@dimen/dp_120"
+        android:src="@drawable/common_btn_add_n" />
+
+</RelativeLayout>
