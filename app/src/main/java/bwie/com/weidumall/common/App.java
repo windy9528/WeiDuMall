@@ -12,6 +12,8 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.imagepipeline.cache.MemoryCacheParams;
 import com.facebook.imagepipeline.core.ImagePipelineConfig;
 
+import java.text.DecimalFormat;
+
 import javax.xml.namespace.NamespaceContext;
 
 import bwie.com.weidumall.entity.user.UserInfo;
@@ -48,6 +50,9 @@ public class App extends Application {
 
     private static SharedPreferences userInfo;
     private static SharedPreferences loginStatus;
+    private static double d; //
+    private static DecimalFormat df;
+    private String format;
 
     @Override
     public void onCreate() {
@@ -56,11 +61,16 @@ public class App extends Application {
         mMainThreadId = android.os.Process.myTid();
         mMainThread = Thread.currentThread();
         mMainThreadHandler = new Handler();
+        df = new DecimalFormat("#.00");  //double类型保留两个小数
 
         loginStatus = getSharedPreferences("loginStatus", MODE_PRIVATE);
         userInfo = getSharedPreferences("userInfo", MODE_PRIVATE);
 
         Fresco.initialize(this, getConfigureCaches(this));//图片加载框架初始化
+    }
+
+    public static String decimalFormat(double d){
+        return df.format(d);
     }
 
     public static SharedPreferences getUserInfo() {

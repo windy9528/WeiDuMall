@@ -2,6 +2,8 @@ package bwie.com.weidumall.util;
 
 import android.content.Context;
 
+import com.blankj.utilcode.util.AppUtils;
+
 import java.io.IOException;
 
 import bwie.com.weidumall.common.App;
@@ -22,17 +24,17 @@ public class HeaderInterceptor implements Interceptor {
 
         Request request = chain.request();//原始请求对象
         Request.Builder builder = request.newBuilder();
+
         builder.addHeader("userId", String.valueOf(App
                 .getUserInfo().getInt("userId", 0)));
         builder.addHeader("sessionId", App
                 .getUserInfo().getString("sessionId", ""));
-        /*
-        builder.addHeader("ak", SpUtils.getString("0110010010000"));
-        builder.addHeader("cache-control","max-age: 1000");
-        builder.addHeader("versionCode", SpUtils.getString("sessionId"));
-        builder.addHeader("deviceId", SpUtils.getString("sessionId"));
-        builder.addHeader("appKey", SpUtils.getString("sessionId"));
-        */
+        builder.addHeader("versionName", AppUtils.getAppVersionName());
+        builder.addHeader("versionCode", String.valueOf(AppUtils.getAppVersionCode()));
+        builder.addHeader("SHA1", AppUtils.getAppSignatureSHA1());
+        builder.addHeader("SHA256", AppUtils.getAppSignatureSHA256());
+        builder.addHeader("MD5", AppUtils.getAppSignatureMD5());
+
         return chain.proceed(builder.build());
     }
 }

@@ -3,6 +3,9 @@ package bwie.com.weidumall.view.activity.user;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -52,6 +55,7 @@ public class LoginActivity extends BaseActivity implements ImplView<UserInfo> {
     private SharedPreferences loginSp;
     private String phone;
     private String password;
+    boolean pwdStatus; //密码状态
 
     @Override
     protected int getLayoutId() {
@@ -63,14 +67,25 @@ public class LoginActivity extends BaseActivity implements ImplView<UserInfo> {
         loginPresenter = new LoginPresenter(this);
     }
 
-    @OnClick({R.id.btn_login, R.id.qucik_register})
+    @OnClick({R.id.btn_login, R.id.qucik_register, R.id.status_password})
     public void click(View v) {
         switch (v.getId()) {
             case R.id.btn_login:
-                login();
+                login(); //登录相关操作
                 break;
             case R.id.qucik_register:
+                //跳转到注册页面
                 intent(RegisterActivity.class);
+                finish();
+                break;
+            case R.id.status_password:
+                if (pwdStatus) {//密码显示，则隐藏
+                    loginPwd.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    pwdStatus = false;
+                } else {//密码隐藏则显示
+                    loginPwd.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    pwdStatus = true;
+                }
                 break;
         }
     }
@@ -120,8 +135,11 @@ public class LoginActivity extends BaseActivity implements ImplView<UserInfo> {
     public void success(Result data, Object... args) {
         UserInfo userInfo = (UserInfo) data.getResult();
         SPUtil.saveLoginStatus(this, phone, password, rememberPwd, true);
+        Log.i("aaaaa", "登录哦" + userInfo.getSessionId() + "的啊"
+                + userInfo.getUserId());
         SPUtil.saveUserInfo(this, userInfo.getUserId(), userInfo.getSessionId());
         intent(MainActivity.class);
+        finish();
         showToast("登录成功");
     }
 

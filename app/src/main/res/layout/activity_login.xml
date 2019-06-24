@@ -29,7 +29,8 @@
             android:id="@+id/login_phone"
             style="@style/login_edittext"
             android:layout_toRightOf="@+id/phone_icon"
-            android:hint="手机号" />
+            android:hint="手机号"
+            android:inputType="number" />
 
     </RelativeLayout>
 
@@ -56,9 +57,11 @@
             android:id="@+id/login_pwd"
             style="@style/login_edittext"
             android:layout_toRightOf="@+id/pwd_icon"
-            android:hint="密码" />
+            android:hint="密码"
+            android:inputType="numberPassword" />
 
         <ImageView
+            android:id="@+id/status_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

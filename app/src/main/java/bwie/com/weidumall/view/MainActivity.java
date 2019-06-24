@@ -43,6 +43,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
     @Override
     protected void initView() {
 
+        //动态申请权限
+
         homeFragment = new HomeFragment();
         circleFragment = new CircleFragment();
         cartFragment = new CartFragment();

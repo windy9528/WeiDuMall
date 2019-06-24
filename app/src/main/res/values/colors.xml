@@ -4,6 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="colorWhite">#FFFFFFFF</color>
-    <color name="colorIndexTrue">#FC3A3B</color>
-    <color name="colorIndexFalse">#666666</color>
+    <color name="colorGray">#FF666666</color>
+    <color name="colorRed">#FFFF0000</color>
+    <color name="colorRxxp">#FFFF7F57</color>
+    <color name="colorMlss">#FF787AF6</color>
+    <color name="colorPzsh">#FFFF5F71</color>
+    <color name="colorLine">#FFF2F2F2</color>
+    <color name="colorTip">#FF999999</color>
+    <color name="colorUser">#FFF9F9F9</color>
 </resources>

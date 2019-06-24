@@ -38,15 +38,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-      /*  //查询登录用户，方便每个页面使用
-        UserInfoDao userInfoDao = DaoMaster.newDevSession(this, UserInfoDao.TABLENAME).getUserInfoDao();
-        List<UserInfo> userInfos = userInfoDao.queryBuilder().where(UserInfoDao.Properties.LoginStatus.eq(1)).list();
-        if (userInfos != null && userInfos.size() > 0) {
-            AppUser = userInfos.get(0);//读取第一项
-            Log.i("windy", "BaseActivity页面:" + "userId:"
-                    + AppUser.getUserId() + "sessionId:" + AppUser.getSessionId());
-        }*/
-
         //打印堆栈ID
         Log.i("windy", "getTaskId = " + getTaskId()
                 + "    ThreadName:" + Thread.currentThread().getName());

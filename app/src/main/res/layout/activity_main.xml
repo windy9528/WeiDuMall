@@ -12,7 +12,7 @@
         android:layout_above="@id/all_radiogroup"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="54dp" />
+        android:layout_marginBottom="@dimen/dp_52" />
 
     <RadioGroup
         android:id="@+id/all_radiogroup"

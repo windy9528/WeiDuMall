@@ -10,6 +10,15 @@ public class Result<T> {
     private String message = "请求失败!";
     private String status = "-1";
     private T result;
+    private String headPath;
+
+    public String getHeadPath() {
+        return headPath;
+    }
+
+    public void setHeadPath(String headPath) {
+        this.headPath = headPath;
+    }
 
     public String getMessage() {
         return message;

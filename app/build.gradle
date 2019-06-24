@@ -20,7 +20,7 @@ android {
 }
 greendao {
     schemaVersion 1  //版本
-    daoPackage 'com.bwie.green' // 一般为app包名+生成文件的文件夹名
+    daoPackage 'bwie.com.weidumall.green' // 一般为app包名+生成文件的文件夹名
     targetGenDir 'src/main/java' //生成文件路径
 }
 

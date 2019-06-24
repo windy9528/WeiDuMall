@@ -1,6 +1,6 @@
 package bwie.com.weidumall.common;
 
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -11,28 +11,18 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
-import java.util.List;
-
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import bwie.com.weidumall.entity.user.UserInfo;
 
 public abstract class BaseFragment extends Fragment {
-    public Gson mGson = new Gson();
 
     private Unbinder unbinder;
-
-    public static UserInfo AppUser;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-      /*  UserInfoDao userInfoDao = DaoMaster.newDevSession(getActivity(), UserInfoDao.TABLENAME).getUserInfoDao();
-        List<UserInfo> userInfos = userInfoDao.queryBuilder().where(UserInfoDao.Properties.LoginStatus.eq(1)).list();
-        AppUser = userInfos.get(0);//读取第一项*/
-
-        // 每次ViewPager要展示该页面时，均会调用该方法获取显示的View
         long time = System.currentTimeMillis();
         View view = inflater.inflate(getLayoutId(), container, false);
         unbinder = ButterKnife.bind(this, view);
@@ -75,6 +65,24 @@ public abstract class BaseFragment extends Fragment {
      * 清除数据
      */
     protected abstract void destoryData();
+
+    /**
+     * @param mActivity 无参跳转
+     */
+    public void intent(Class mActivity) {
+        Intent intent = new Intent(getContext(), mActivity);
+        startActivity(intent);
+    }
+
+    /**
+     * @param mActivity 有参跳转
+     * @param bundle
+     */
+    public void intent(Class mActivity, Bundle bundle) {
+        Intent intent = new Intent(getContext(), mActivity);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
 
     /**
      * 显示toast、

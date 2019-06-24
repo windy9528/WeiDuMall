@@ -34,10 +34,10 @@ public class SPUtil {
             editor.putString("phone", phone);
             editor.putString("password", password);
             editor.putBoolean("flag", true);
-            editor.putBoolean("loginStatus", true);
         } else {
             editor.clear();
         }
+        editor.putBoolean("loginStatus", true);
         editor.commit();//提交
     }
 
@@ -54,8 +54,8 @@ public class SPUtil {
         SharedPreferences sPreferences = context.getSharedPreferences("userInfo", context.MODE_PRIVATE);
         Editor editor = sPreferences.edit();
         //存储用户id
-        editor.putInt("phone", userId);
-        editor.putString("password", sessionId);
+        editor.putInt("userId", userId);
+        editor.putString("sessionId", sessionId);
         //提交
         editor.commit();
     }

@@ -51,7 +51,7 @@ public class WelcomeActivity extends BaseActivity {
     @OnClick(R.id.seek_text)
     public void seek() {
         handler.removeMessages(1);
-        if (AppUser != null) {
+        if (App.getLoginStatus().getBoolean("loginStatus", false)) {
             intent(MainActivity.class);
         } else {
             intent(LoginActivity.class);
